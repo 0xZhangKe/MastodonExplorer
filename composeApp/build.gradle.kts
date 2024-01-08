@@ -54,6 +54,7 @@ kotlin {
             implementation(libs.bundles.voyager)
             implementation(libs.bundles.imageloader)
             implementation(libs.kotlinx.serialization.json)
+            implementation(libs.ksoup)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
