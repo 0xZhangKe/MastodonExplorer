@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -42,12 +43,13 @@ fun StatusInfoLine(
         Column(modifier = Modifier.padding(start = 8.dp).weight(1F)) {
             Row(modifier = Modifier.fillMaxWidth()) {
                 Text(
+                    modifier = Modifier.weight(1F),
                     text = blogAuthor.display_name,
                     style = MaterialTheme.typography.subtitle1,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
                 )
-                Box(Modifier.weight(1F))
+                Box(Modifier.width(4.dp))
                 Text(
                     text = StatusDatetimeFormatter.format(defaultFormatConfig(), blogAuthor.created_at),
                     style = MaterialTheme.typography.body2,
