@@ -25,6 +25,7 @@ ktor = "2.3.7"
 voyager = "1.0.0-rc10"
 image-loader = "1.7.1"
 ksoup = "0.3.1"
+sqldelight = "2.0.1"
 
 [bundles]
 ktor = ["ktor-client-core", "ktor-client-cio", "ktor-client-serialization", "ktor-client-content-negotiation", "ktor-serialization-kotlinx-json", "ktor-client-logging"]
@@ -73,6 +74,11 @@ imageloader-moko-resource = { group = "io.github.qdsfdhvh", name = "image-loader
 
 ksoup = { group = "com.mohamedrejeb.ksoup", name = "ksoup-html", version.ref = "ksoup" }
 
+sqldelight-android = { group = "app.cash.sqldelight", name = "android-driver", version.ref = "sqldelight" }
+sqldelight-native = { group = "app.cash.sqldelight", name = "native-driver", version.ref = "sqldelight" }
+sqldelight-sqlite = { group = "app.cash.sqldelight", name = "sqlite-driver", version.ref = "sqldelight" }
+
+
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
@@ -81,4 +87,6 @@ kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref =
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 ktorfit = { id = "de.jensklingenberg.ktorfit", version.ref = "ktorfit" }
 kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
+
 
