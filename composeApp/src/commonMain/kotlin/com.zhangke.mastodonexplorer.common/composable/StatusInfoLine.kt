@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import com.seiko.imageloader.rememberImagePainter
 import com.zhangke.mastodonexplorer.common.entities.AccountEntity
 import com.zhangke.mastodonexplorer.common.utils.StatusDatetimeFormatter
+import com.zhangke.mastodonexplorer.common.utils.defaultFormatConfig
 
 @Composable
 fun StatusInfoLine(
@@ -48,7 +49,7 @@ fun StatusInfoLine(
                 )
                 Box(Modifier.weight(1F))
                 Text(
-                    text = StatusDatetimeFormatter.format(blogAuthor.created_at),
+                    text = StatusDatetimeFormatter.format(defaultFormatConfig(), blogAuthor.created_at),
                     style = MaterialTheme.typography.body2,
                 )
             }

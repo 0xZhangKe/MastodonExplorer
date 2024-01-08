@@ -11,45 +11,75 @@ import kotlin.time.DurationUnit
 
 object StatusDatetimeFormatter {
 
-    fun format(datetime: String): String {
+    fun format(config: DatetimeFormatConfig, datetime: String): String {
         val instant = try {
             datetime.toInstant()
         } catch (e: Throwable) {
             return datetime
         }
-        val leftInstant = Clock.System.now().minus(instant)
-        return formatDuration(leftInstant)
+        val duration = Clock.System.now().minus(instant)
+        val inWholeDays = duration.inWholeDays
+        if (inWholeDays > 3) {
+            return DateFormat().formatToMedium(instant.toEpochMilliseconds())
+        }
+        return formatDuration(config, duration)
     }
 
-    private fun formatDuration(duration: Duration): String {
-        val builder = StringBuilder()
+    private fun formatDuration(config: DatetimeFormatConfig, duration: Duration): String {
         if (duration.isInfinite()) return ""
-        val month = duration.inWholeDays / 30
-        if (month > 0) {
-            builder.append(month)
-            builder.append("mo ")
-        }
-        val day = (duration - (month * 30).days).inWholeDays.days
+        var leftDuration = duration
+        val day = (leftDuration).inWholeDays.days
+        leftDuration -= day
         if (day > 0.days) {
-            builder.append(day.toInt(DurationUnit.DAYS))
-            builder.append("d ")
+            return "${day.toInt(DurationUnit.DAYS)} ${config.day}"
         }
-        val hours = (duration - day).inWholeHours.hours
+        val hours = leftDuration.inWholeHours.hours
+        leftDuration -= hours
         if (hours > 0.hours) {
-            builder.append(hours.toInt(DurationUnit.HOURS))
-            builder.append("h ")
+            return "${hours.toInt(DurationUnit.HOURS)} ${config.hour}"
         }
-        val minutes = (duration - day - hours).inWholeMinutes.minutes
+        val minutes = leftDuration.inWholeMinutes.minutes
+        leftDuration -= minutes
         if (minutes > 0.minutes) {
-            builder.append(minutes.toInt(DurationUnit.MINUTES))
-            builder.append("m ")
+            return "${minutes.toInt(DurationUnit.MINUTES)} ${config.minutes}"
         }
-        val seconds = (duration - day - hours - minutes).inWholeSeconds.seconds
-        if (seconds > 0.seconds) {
-            builder.append(seconds.toInt(DurationUnit.SECONDS))
-            builder.append("s ")
+        val seconds = leftDuration.inWholeSeconds.seconds
+        return "${seconds.toInt(DurationUnit.SECONDS)} ${config.second}"
+    }
+
+    private fun convertFullMonthNamesToAbbreviations(text: String): String {
+        val monthMap = mapOf(
+            "January" to "Jan",
+            "February" to "Feb",
+            "March" to "Mar",
+            "April" to "Apr",
+            "May" to "May",
+            "June" to "Jun",
+            "July" to "Jul",
+            "August" to "Aug",
+            "September" to "Sep",
+            "October" to "Oct",
+            "November" to "Nov",
+            "December" to "Dec"
+        )
+        var updatedText = text
+        monthMap.forEach { (full, abbr) ->
+            updatedText = updatedText.replace(full, abbr)
         }
-        builder.append("ago")
-        return builder.toString()
+        return updatedText
     }
 }
+
+data class DatetimeFormatConfig(
+    val day: String,
+    val hour: String,
+    val minutes: String,
+    val second: String,
+)
+
+fun defaultFormatConfig() = DatetimeFormatConfig(
+    day = "day",
+    hour = "hour",
+    minutes = "min",
+    second = "sec",
+)
