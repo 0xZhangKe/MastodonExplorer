@@ -12,7 +12,14 @@
 - https://github.com/adrielcafe/voyager
 
 
+# Build
 
+### Desktop
+```
+./gradlew :composeApp:run 
+```
+### iOS
+Click XCode run button direct.
 
 This is a Kotlin Multiplatform project targeting Android, iOS, Desktop.
 
