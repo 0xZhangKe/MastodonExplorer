@@ -57,6 +57,7 @@ kotlin {
             implementation(libs.bundles.imageloader)
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.ksoup)
+            implementation(libs.sqldelight.coroutines.ext)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)

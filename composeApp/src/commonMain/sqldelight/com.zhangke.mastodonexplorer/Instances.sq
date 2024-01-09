@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS Instances (
+    domain TEXT NOT NULL PRIMARY KEY,
+    category TEXT NOT NULL,
+    description TEXT NOT NULL,
+    language TEXT NOT NULL,
+    last_week_users INTEGER NOT NULL,
+    proxied_thumbnail TEXT NOT NULL,
+    region TEXT NOT NULL,
+    total_users INTEGER NOT NULL
+);
+
+selectAll:
+SELECT * FROM Instances;
+
+insert:
+INSERT INTO Instances(domain, category, description, language, last_week_users, proxied_thumbnail, region, total_users)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?);
+
+deleteByDomain:
+DELETE FROM Instances WHERE domain = ?;

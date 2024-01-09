@@ -12,5 +12,4 @@ data class MastodonInstanceEntity(
     val proxied_thumbnail: String,
     val region: String,
     val total_users: Int,
-    val version: String,
 )
