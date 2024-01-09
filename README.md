@@ -1,3 +1,19 @@
+# Some useful links
+
+- https://kotlinlang.org/docs/multiplatform.html
+- https://kmp.jetbrains.com/
+- https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-getting-started.html
+- https://cashapp.github.io/sqldelight/2.0.1/multiplatform_sqlite/
+- https://github.com/russhwolf/To-Do/
+- https://ktor.io/docs/create-client.html
+- https://github.com/qdsfdhvh/compose-imageloader
+- https://github.com/Foso/Ktorfit
+- https://github.com/AAkira/Kotlin-Multiplatform-Libraries
+- https://github.com/adrielcafe/voyager
+
+
+
+
 This is a Kotlin Multiplatform project targeting Android, iOS, Desktop.
 
 * `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
