@@ -21,6 +21,11 @@
 ### iOS
 Click XCode run button direct.
 
+### Android
+select composeApp and click Android Studio run button.
+
+# generate by KMM
+
 This is a Kotlin Multiplatform project targeting Android, iOS, Desktop.
 
 * `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
