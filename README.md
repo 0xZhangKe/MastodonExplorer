@@ -44,6 +44,44 @@ select composeApp and click Android Studio run button.
 # Dependency
 [This repository](https://github.com/AAkira/Kotlin-Multiplatform-Libraries) list some KMM libraries.
 
+```kts
+kotlin {
+
+  sourceSets {
+    val desktopMain by getting
+
+    // just for android
+    androidMain.dependencies {
+      implementation(libs.compose.ui.tooling.preview)
+      implementation(libs.androidx.activity.compose)
+      implementation(libs.sqldelight.android)
+    }
+
+    // for all
+    commonMain.dependencies {
+      implementation(compose.runtime)
+      implementation(compose.foundation)
+      implementation(compose.material)
+      implementation(compose.ui)
+      @OptIn(ExperimentalComposeLibrary::class)
+      implementation(compose.components.resources)
+    }
+
+    // just for desktop
+    desktopMain.dependencies {
+        implementation(compose.desktop.currentOs)
+        implementation(libs.sqldelight.sqlite)
+    }
+
+    // just for ios
+    iosMain.dependencies {
+        implementation(libs.ktor.client.darwin)
+        implementation(libs.sqldelight.native)
+    }
+  }
+
+}
+```
 
 # generate by KMM
 
