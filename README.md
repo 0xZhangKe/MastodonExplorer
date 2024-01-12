@@ -11,6 +11,23 @@
 - https://github.com/AAkira/Kotlin-Multiplatform-Libraries
 - https://github.com/adrielcafe/voyager
 
+# Environment
+See [Official Document](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-setup.html).
+- Android Studio
+- XCode
+- JDK
+- Kotlin Multiplatform mobile plugin
+- kotlin plugin
+- kdoctor(Optional)
+
+# Create Project
+It is recommended to use [template tools](https://kmp.jetbrains.com/) to create KMM projects.
+
+# Project Structure
+
+![](images/project_file_structure.png)
+
+![](images/kmm_project_structure.png)
 
 # Build
 
@@ -23,6 +40,9 @@ Click XCode run button direct.
 
 ### Android
 select composeApp and click Android Studio run button.
+
+# Dependency
+
 
 # generate by KMM
 
