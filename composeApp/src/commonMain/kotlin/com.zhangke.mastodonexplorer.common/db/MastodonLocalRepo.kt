@@ -9,19 +9,21 @@ import kotlinx.coroutines.withContext
 
 class MastodonLocalRepo {
 
-    private val instancesQueries: InstancesQueries by lazy {
-        createDatabase(DriverFactory()).instancesQueries
+    private val instancesQueries: InstancesQueries? by lazy {
+        createDatabase(DriverFactory())?.instancesQueries
     }
 
     private val mastodonInstanceAdapter = MastodonInstanceAdapter()
 
     suspend fun queryAll(): List<MastodonInstanceEntity> = withContext(Dispatchers.IO) {
-        return@withContext instancesQueries.selectAll()
+        instancesQueries ?: return@withContext emptyList()
+        return@withContext instancesQueries!!.selectAll()
             .executeAsList()
             .map(mastodonInstanceAdapter::toInstanceEntity)
     }
 
     suspend fun insert(instances: List<MastodonInstanceEntity>) = withContext(Dispatchers.IO) {
+        val instancesQueries = instancesQueries ?: return@withContext
         instancesQueries.transaction {
             instances.forEach { instance ->
                 instancesQueries.insert(

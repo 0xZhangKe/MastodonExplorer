@@ -8,4 +8,5 @@ data class StatusEntity(
     val content: String,
     val created_at: String,
     val account: AccountEntity,
+    val media_attachments: List<MastodonAttachment>,
 )

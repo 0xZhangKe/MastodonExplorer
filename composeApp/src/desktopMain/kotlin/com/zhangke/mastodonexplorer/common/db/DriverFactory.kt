@@ -7,7 +7,7 @@ import java.io.File
 
 actual class DriverFactory {
 
-    actual fun createDriver(dbName: String): SqlDriver {
+    actual fun createDriver(dbName: String): SqlDriver? {
         val userDir = System.getProperty("user.home")
         val dbDirPath = "$userDir/sqlite/mastodon_explorer"
         val dbDir = File(dbDirPath)

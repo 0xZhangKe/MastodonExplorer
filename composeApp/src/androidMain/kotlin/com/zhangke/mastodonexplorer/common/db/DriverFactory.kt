@@ -7,7 +7,7 @@ import com.zhangke.mastodonexplorer.common.utils.appContext
 
 actual class DriverFactory {
 
-    actual fun createDriver(dbName: String): SqlDriver {
+    actual fun createDriver(dbName: String): SqlDriver? {
         return AndroidSqliteDriver(Database.Schema, appContext, dbName)
     }
 }
