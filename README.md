@@ -1,8 +1,8 @@
 # Some useful links
-
 - https://kotlinlang.org/docs/multiplatform.html
 - https://kmp.jetbrains.com/
 - https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-getting-started.html
+- https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-samples.html
 - https://cashapp.github.io/sqldelight/2.0.1/multiplatform_sqlite/
 - https://github.com/russhwolf/To-Do/
 - https://ktor.io/docs/create-client.html
@@ -42,6 +42,7 @@ Click XCode run button direct.
 select composeApp and click Android Studio run button.
 
 # Dependency
+[This repository](https://github.com/AAkira/Kotlin-Multiplatform-Libraries) list some KMM libraries.
 
 
 # generate by KMM
