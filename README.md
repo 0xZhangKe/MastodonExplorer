@@ -1,15 +1,15 @@
 # Some useful links
-- https://kotlinlang.org/docs/multiplatform.html
-- https://kmp.jetbrains.com/
-- https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-getting-started.html
-- https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-samples.html
-- https://cashapp.github.io/sqldelight/2.0.1/multiplatform_sqlite/
-- https://github.com/russhwolf/To-Do/
-- https://ktor.io/docs/create-client.html
-- https://github.com/qdsfdhvh/compose-imageloader
-- https://github.com/Foso/Ktorfit
-- https://github.com/AAkira/Kotlin-Multiplatform-Libraries
-- https://github.com/adrielcafe/voyager
+- [Kotlin Multiplatform official document](https://kotlinlang.org/docs/multiplatform.html)
+- [Kotlin Multiplatform project template creator tools](https://kmp.jetbrains.com/)
+- [Jetpack Compose multiplatform offical document](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-getting-started.html)
+- [KMP samples](https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-samples.html)
+- [Sqldelight](https://cashapp.github.io/sqldelight/2.0.1/multiplatform_sqlite/)
+- [KMP samples of To-Do](https://github.com/russhwolf/To-Do/)
+- [Ktor client for HTTP](https://ktor.io/docs/create-client.html)
+- [Ktorfit(Similar to Retrofit)](https://github.com/Foso/Ktorfit)
+- [Compose imageloader(@seiko)](https://github.com/qdsfdhvh/compose-imageloader)
+- [KMP Libraries](https://github.com/AAkira/Kotlin-Multiplatform-Libraries)
+- [Voyager(KMP Jetpack compose Navigator)](https://github.com/adrielcafe/voyager)
 
 # Environment
 See [Official Document](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-setup.html).
